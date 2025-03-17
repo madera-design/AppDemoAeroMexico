@@ -5,6 +5,8 @@ import FlightListScreen from '@/src/screens/FlightListScreen';
 import FlightDetailsScreen from '../screens/FlightDetailsScreen';
 import CustomHeaderTitle from '../components/HeaderTitleNavigate';
 import CustomBackButton from '../components/BackButtom';
+import { TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -33,8 +35,13 @@ const AppNavigator = () => {
       <Stack.Screen
         name="FlightList"
         component={FlightListScreen}
-        options={({ route }) => ({
+        options={({ navigation, route }) => ({
           headerTitle: () => <CustomHeaderTitle route={route} />,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginLeft: 10 }}>
+              <Entypo name="chevron-left" size={24} color="black" />
+            </TouchableOpacity>
+          ),
         })}
       />
       <Stack.Screen

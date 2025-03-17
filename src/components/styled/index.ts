@@ -139,7 +139,8 @@ export const FlightItem = styled.View`
   padding: 16px;
   margin-bottom: 8px;
   background-color: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 20px;
+  border: 1px solid black;
 `;
 export const FlightStatus = styled.View<{ status: string }>`
   padding: 10px;
@@ -185,9 +186,13 @@ export const FlightDetailsBottom = styled.View`
   border-top-width: 1px;
   border-top-color: #000; 
 `;
+export const DetailButton = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
 export const DetailButtonText = styled.Text`
-  color: #000;
-  font-size: 16px;
+   font-size: 16px;
+   text-decoration-line: underline;
 `;
 export const FlightStatusText = styled.Text`
   color: #fff;

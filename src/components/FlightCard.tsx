@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, Switch } from 'react-native';
+import Entypo from '@expo/vector-icons/Entypo';
 import { useFormatTime } from '../hooks/useFormatTime';
 import {
   FlightItem,
@@ -14,6 +15,7 @@ import {
   FlightSwitch,
   AirportHours,
   FlightSwitchText,
+  DetailButton,
 } from './styled';
 
 type FlightStatus = 'ARRIVED' | 'ON_TIME' | 'DELAYED';
@@ -98,7 +100,9 @@ const FlightCard: React.FC<FlightCardProps> = ({ item, onNavigate, isFavorite, t
         </View>
         <View>
           <TouchableOpacity onPress={onNavigate}>
-            <DetailButtonText>{'Details >'}</DetailButtonText>
+            <DetailButton>
+              <DetailButtonText>Details</DetailButtonText> <Entypo name="chevron-right" size={24} color="black" />
+            </DetailButton>
           </TouchableOpacity>
         </View>
       </FlightDetailsBottom>
